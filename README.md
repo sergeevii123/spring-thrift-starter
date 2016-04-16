@@ -17,7 +17,7 @@ repositories {
 ```
 
 ```
-compile 'info.developerblog.spring.thrift:spring-thrift-starter:0.1.4'
+compile 'info.developerblog.spring.thrift:spring-thrift-starter:0.9.2'
 ```
 
 ## How to use this
@@ -50,11 +50,18 @@ greeting-service:                     #service name
   ribbon:                             #manually ribbon
       listOfServers: localhost:8080
   path: /service                      #general path
+  connectTimeout: 1000                #default=1000
+  readTimeout: 10000                  #default=30000
 ```
 
 If you use service discovery backend (as Eureka or Consul) only path maybe needed.
 
 See tests for better understanding.
+
+## Special thanks to
+
+* [@bsideup](https://github.com/bsideup) who inspired me with his [project](https://github.com/bsideup/thrift-spring-boot-starter)
+* [@lavcraft](https://github.com/lavcraft) who was helping me when I've been stucked
 
 ## Enjoy!
 
